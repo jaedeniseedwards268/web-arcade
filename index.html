@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Arcade Expo</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: radial-gradient(circle at top, #111 0%, #000 100%);
+    color: #fff;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3em;
+    text-shadow: 0 0 15px #00e6e6, 0 0 30px #008080;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  h2.category-title {
+    font-size: 2em;
+    margin: 30px 0 15px 0;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+  }
+
+  .game-button {
+    width: 200px;
+    height: 100px;
+    background-color: #222;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 10px #111;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .game-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px 5px var(--hoverColor);
+    background-color: var(--hoverColor);
+  }
+
+  .game-button span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+  }
+
+  .game-button .hover-text {
+    opacity: 0;
+    font-weight: bold;
+  }
+
+  .game-button:hover .main-text {
+    opacity: 0;
+  }
+
+  .game-button:hover .hover-text {
+    opacity: 1;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>🎮 Web Arcade Expo 🎮</h1>
+<div class = "Games created by EBR CTEC Programming Students">
+<!-- Logic & Brain Games -->
+ </div>
+<h2 class="category-title">🎯 Logic & Brain Games</h2>
+<div class="grid">
+  <button class="game-button" data-link="games/logic/guess-number/index.html">
+    <span class="main-text">Guess the Number</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/logic/quiz-battle/index.html">
+    <span class="main-text">Quiz Battle</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/logic/memory-match/index.html">
+    <span class="main-text">Memory Match</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/logic/puzzle-builder/index.html">
+    <span class="main-text">Puzzle Builder</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/logic/shape-sorter/index.html">
+    <span class="main-text">Shape Sorter</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+</div>
+
+<!-- Action & Adventure Games -->
+<h2 class="category-title">🕹️ Action & Adventure</h2>
+<div class="grid">
+  <button class="game-button" data-link="games/action/platform-jumper/index.html">
+    <span class="main-text">Platform Jumper</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/action/pixel-maze/index.html">
+    <span class="main-text">Pixel Maze Runner</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/action/space-defender/index.html">
+    <span class="main-text">Space Defender</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/action/tower-builder/index.html">
+    <span class="main-text">Tower Builder</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/action/dodge-ball/index.html">
+    <span class="main-text">Dodge Ball</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/action/balloon-pop/index.html">
+    <span class="main-text">Balloon Pop</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+</div>
+
+<!-- Creative & Simulation Games -->
+<h2 class="category-title">🎨 Creative & Simulation</h2>
+<div class="grid">
+  <button class="game-button" data-link="games/creative/virtual-pet/index.html">
+    <span class="main-text">Virtual Pet</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/creative/clicker-game/index.html">
+    <span class="main-text">Clicker Game</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/creative/typing-challenge/index.html">
+    <span class="main-text">Typing Speed Challenge</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/creative/fruit-slicer/index.html">
+    <span class="main-text">Fruit Slicer</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/creative/color-catcher/index.html">
+    <span class="main-text">Color Catcher</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+  <button class="game-button" data-link="games/creative/mini-arcade/index.html">
+    <span class="main-text">Mini Arcade Competition</span>
+    <span class="hover-text">Click to Start</span>
+  </button>
+</div>
+<footer>&copy; 2025 Jacqueline Edwards. All rights reserved.</footer>
+
+<audio id="hoverSound" preload="auto">
+  <source src="sample-3s.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const buttons = document.querySelectorAll('.game-button');
+const hoverSound = document.getElementById('hoverSound');
+
+function getRandomColor() {
+  const h = Math.floor(Math.random() * 360);
+  const s = 80;
+  const l = 50;
+  return `hsl(${h}, ${s}%, ${l}%)`;
+}
+
+buttons.forEach(btn => {
+  const originalText = btn.textContent;
+
+  btn.addEventListener('mouseenter', () => {
+    const color = getRandomColor();
+    btn.style.setProperty('--hoverColor', color);
+    btn.style.backgroundColor = color;
+    btn.textContent = "Click to Start";
+    hoverSound.currentTime = 0;
+    hoverSound.play();
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    btn.style.backgroundColor = '#222';
+    btn.textContent = originalText;
+  });
+
+  btn.addEventListener('click', () => {
+    const link = btn.getAttribute('data-link');
+    window.location.href = link;
+  });
+});
+</script>
+
+</body>
+</html>
