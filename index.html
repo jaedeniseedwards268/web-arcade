@@ -13,7 +13,6 @@
     background: radial-gradient(circle at top, #111 0%, #000 100%);
     color: #fff;
     text-align: center;
-    overflow-x: hidden;
   }
 
   marquee {
@@ -41,12 +40,16 @@
   h2.category-title {
     font-size: 1.5em;
     margin: 40px 0 20px 0;
-    color: #ff0;
-    text-shadow: 0 0 10px #ff0;
-    border-bottom: 2px dashed #ff0;
+    text-shadow: 0 0 10px currentColor;
+    border-bottom: 2px dashed currentColor;
     display: inline-block;
     padding-bottom: 5px;
   }
+
+  /* Category-specific neon colors */
+  .logic { color: #0ff; }       /* Cyan */
+  .action { color: #ff00ff; }   /* Magenta */
+  .creative { color: #39ff14; } /* Neon green */
 
   .grid {
     display: flex;
@@ -60,23 +63,23 @@
   .game-button {
     width: 220px;
     height: 120px;
-    background: #111;
-    border: 3px solid #0ff;
+    background: #f18a04db;              /* orange base */
+    border: 2px solid #444;        /* subtle border */
     border-radius: 12px;
     font-family: 'Press Start 2P', cursive;
     text-transform: uppercase;
     color: #fff;
-    box-shadow: 0 0 15px #0ff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #111;     /* soft shadow */
   }
 
   .game-button:hover {
     transform: scale(1.1) rotate(-2deg);
-    box-shadow: 0 0 25px 5px #ff00ff;
-    background: #222;
+    box-shadow: 0 0 25px 5px rgb(230, 233, 233); /* neon glow on hover */
+    background: #333;              /* slightly lighter on hover */
   }
 
   .game-button span {
@@ -94,7 +97,7 @@
   .game-button .hover-text {
     opacity: 0;
     font-weight: bold;
-    color: #0ff;
+    color: #fff;
   }
 
   .game-button:hover .main-text {
@@ -120,89 +123,36 @@
   INSERT COIN • PLAY NOW • HIGH SCORES COMING SOON
 </marquee>
 
-<h1>Web Arcade Expo </h1>
+<h1> Web Arcade Expo </h1>
 
 <!-- Logic & Brain Games -->
-<h2 class="category-title">Logic & Brain Games</h2>
+<h2 class="category-title logic">Logic & Brain Games</h2>
 <div class="grid">
-  <button class="game-button" onclick="location.href='games/logic/guess-number/index.html'">
-    <span class="main-text">Guess the Number</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/logic/quiz-battle/index.html'">
-    <span class="main-text">Quiz Battle</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/logic/memory-match/index.html'">
-    <span class="main-text">Memory Match</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/logic/puzzle-builder/index.html'">
-    <span class="main-text">Puzzle Builder</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/logic/shape-sorter/index.html'">
-    <span class="main-text">Shape Sorter</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
+  <button class="game-button" onclick="location.href='games/logic/guess-number/index.html'"><span class="main-text">Guess the Number</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/logic/quiz-battle/index.html'"><span class="main-text">Quiz Battle</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/logic/memory-match/index.html'"><span class="main-text">Memory Match</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/logic/puzzle-builder/index.html'"><span class="main-text">Puzzle Builder</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/logic/shape-sorter/index.html'"><span class="main-text">Shape Sorter</span><span class="hover-text">Click to Start</span></button>
 </div>
 
 <!-- Action & Adventure Games -->
-<h2 class="category-title">Action & Adventure</h2>
+<h2 class="category-title action">Action & Adventure</h2>
 <div class="grid">
-  <button class="game-button" onclick="location.href='games/action/platform-jumper/index.html'">
-    <span class="main-text">Platform Jumper</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/action/pixel-maze/index.html'">
-    <span class="main-text">Pixel Maze Runner</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/action/space-defender/index.html'">
-    <span class="main-text">Space Defender</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/action/tower-builder/index.html'">
-    <span class="main-text">Tower Builder</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/action/dodge-ball/index.html'">
-    <span class="main-text">Dodge Ball</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/action/balloon-pop/index.html'">
-    <span class="main-text">Balloon Pop</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
+  <button class="game-button" onclick="location.href='games/action/platform-jumper/index.html'"><span class="main-text">Platform Jumper</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/action/space-defender/index.html'"><span class="main-text">Space Defender</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/action/tower-builder/index.html'"><span class="main-text">Tower Builder</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/action/dodge-ball/index.html'"><span class="main-text">Dodge Ball</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/action/balloon-pop/index.html'"><span class="main-text">Balloon Pop</span><span class="hover-text">Click to Start</span></button>
 </div>
 
 <!-- Creative & Simulation Games -->
-<h2 class="category-title">Creative & Simulation</h2>
+<h2 class="category-title creative">Creative & Simulation</h2>
 <div class="grid">
-  <button class="game-button" onclick="location.href='games/creative/virtual-pet/index.html'">
-    <span class="main-text">Virtual Pet</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/creative/clicker-game/index.html'">
-    <span class="main-text">Clicker Game</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/creative/typing-challenge/index.html'">
-    <span class="main-text">Typing Speed Challenge</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/creative/fruit-slicer/index.html'">
-    <span class="main-text">Fruit Slicer</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/creative/color-catcher/index.html'">
-    <span class="main-text">Color Catcher</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
-  <button class="game-button" onclick="location.href='games/creative/mini-arcade/index.html'">
-    <span class="main-text">Mini Arcade Competition</span>
-    <span class="hover-text">Click to Start</span>
-  </button>
+  <button class="game-button" onclick="location.href='games/creative/virtual-pet/index.html'"><span class="main-text">Virtual Pet</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/creative/clicker-game/index.html'"><span class="main-text">Clicker Game</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/creative/typing-challenge/index.html'"><span class="main-text">Typing Speed Challenge</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/creative/fruit-slicer/index.html'"><span class="main-text">Fruit Slicer</span><span class="hover-text">Click to Start</span></button>
+  <button class="game-button" onclick="location.href='games/creative/color-catcher/index.html'"><span class="main-text">Color Catcher</span><span class="hover-text">Click to Start</span></button>
 </div>
 
 <footer>&copy; 2025 Jacqueline Edwards. All rights reserved.</footer>
