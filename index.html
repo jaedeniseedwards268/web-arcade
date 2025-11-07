@@ -4,58 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web Arcade Expo</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     background: radial-gradient(circle at top, #111 0%, #000 100%);
     color: #fff;
     text-align: center;
+    overflow-x: hidden;
+  }
+
+  marquee {
+    color: #0ff;
+    font-size: 1em;
+    padding: 10px;
+    background: #111;
+    border-top: 2px solid #0ff;
+    border-bottom: 2px solid #0ff;
+    text-shadow: 0 0 10px #0ff;
   }
 
   h1 {
-    font-size: 3em;
-    text-shadow: 0 0 15px #00e6e6, 0 0 30px #008080;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+    animation: pulse 2s infinite;
+    margin: 30px 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { text-shadow: 0 0 20px #ff00ff; }
+    50% { text-shadow: 0 0 40px #00ffff; }
   }
 
   h2.category-title {
-    font-size: 2em;
-    margin: 30px 0 15px 0;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
+    font-size: 1.5em;
+    margin: 40px 0 20px 0;
+    color: #ff0;
+    text-shadow: 0 0 10px #ff0;
+    border-bottom: 2px dashed #ff0;
+    display: inline-block;
+    padding-bottom: 5px;
   }
 
   .grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto 50px auto;
   }
 
   .game-button {
-    width: 200px;
-    height: 100px;
-    background-color: #222;
-    border: none;
-    border-radius: 15px;
+    width: 220px;
+    height: 120px;
+    background: #111;
+    border: 3px solid #0ff;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
     color: #fff;
-    font-size: 1em;
+    box-shadow: 0 0 15px #0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 0 10px #111;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
   }
 
   .game-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px 5px var(--hoverColor);
-    background-color: var(--hoverColor);
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 25px 5px #ff00ff;
+    background: #222;
   }
 
   .game-button span {
@@ -73,6 +94,7 @@
   .game-button .hover-text {
     opacity: 0;
     font-weight: bold;
+    color: #0ff;
   }
 
   .game-button:hover .main-text {
@@ -83,135 +105,107 @@
     opacity: 1;
   }
 
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #888;
+    border-top: 2px solid #444;
+  }
 </style>
 </head>
 <body>
 
-<h1>🎮 Web Arcade Expo 🎮</h1>
-<div class = "Games created by EBR CTEC Programming Students">
+<marquee behavior="scroll" direction="left">
+  INSERT COIN • PLAY NOW • HIGH SCORES COMING SOON
+</marquee>
+
+<h1>Web Arcade Expo </h1>
+
 <!-- Logic & Brain Games -->
- </div>
-<h2 class="category-title">🎯 Logic & Brain Games</h2>
+<h2 class="category-title">Logic & Brain Games</h2>
 <div class="grid">
-  <button class="game-button" data-link="games/logic/guess-number/index.html">
+  <button class="game-button" onclick="location.href='games/logic/guess-number/index.html'">
     <span class="main-text">Guess the Number</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/logic/quiz-battle/index.html">
+  <button class="game-button" onclick="location.href='games/logic/quiz-battle/index.html'">
     <span class="main-text">Quiz Battle</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/logic/memory-match/index.html">
+  <button class="game-button" onclick="location.href='games/logic/memory-match/index.html'">
     <span class="main-text">Memory Match</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/logic/puzzle-builder/index.html">
+  <button class="game-button" onclick="location.href='games/logic/puzzle-builder/index.html'">
     <span class="main-text">Puzzle Builder</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/logic/shape-sorter/index.html">
+  <button class="game-button" onclick="location.href='games/logic/shape-sorter/index.html'">
     <span class="main-text">Shape Sorter</span>
     <span class="hover-text">Click to Start</span>
   </button>
 </div>
 
 <!-- Action & Adventure Games -->
-<h2 class="category-title">🕹️ Action & Adventure</h2>
+<h2 class="category-title">Action & Adventure</h2>
 <div class="grid">
-  <button class="game-button" data-link="games/action/platform-jumper/index.html">
+  <button class="game-button" onclick="location.href='games/action/platform-jumper/index.html'">
     <span class="main-text">Platform Jumper</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/action/pixel-maze/index.html">
+  <button class="game-button" onclick="location.href='games/action/pixel-maze/index.html'">
     <span class="main-text">Pixel Maze Runner</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/action/space-defender/index.html">
+  <button class="game-button" onclick="location.href='games/action/space-defender/index.html'">
     <span class="main-text">Space Defender</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/action/tower-builder/index.html">
+  <button class="game-button" onclick="location.href='games/action/tower-builder/index.html'">
     <span class="main-text">Tower Builder</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/action/dodge-ball/index.html">
+  <button class="game-button" onclick="location.href='games/action/dodge-ball/index.html'">
     <span class="main-text">Dodge Ball</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/action/balloon-pop/index.html">
+  <button class="game-button" onclick="location.href='games/action/balloon-pop/index.html'">
     <span class="main-text">Balloon Pop</span>
     <span class="hover-text">Click to Start</span>
   </button>
 </div>
 
 <!-- Creative & Simulation Games -->
-<h2 class="category-title">🎨 Creative & Simulation</h2>
+<h2 class="category-title">Creative & Simulation</h2>
 <div class="grid">
-  <button class="game-button" data-link="games/creative/virtual-pet/index.html">
+  <button class="game-button" onclick="location.href='games/creative/virtual-pet/index.html'">
     <span class="main-text">Virtual Pet</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/creative/clicker-game/index.html">
+  <button class="game-button" onclick="location.href='games/creative/clicker-game/index.html'">
     <span class="main-text">Clicker Game</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/creative/typing-challenge/index.html">
+  <button class="game-button" onclick="location.href='games/creative/typing-challenge/index.html'">
     <span class="main-text">Typing Speed Challenge</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/creative/fruit-slicer/index.html">
+  <button class="game-button" onclick="location.href='games/creative/fruit-slicer/index.html'">
     <span class="main-text">Fruit Slicer</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/creative/color-catcher/index.html">
+  <button class="game-button" onclick="location.href='games/creative/color-catcher/index.html'">
     <span class="main-text">Color Catcher</span>
     <span class="hover-text">Click to Start</span>
   </button>
-  <button class="game-button" data-link="games/creative/mini-arcade/index.html">
+  <button class="game-button" onclick="location.href='games/creative/mini-arcade/index.html'">
     <span class="main-text">Mini Arcade Competition</span>
     <span class="hover-text">Click to Start</span>
   </button>
 </div>
+
 <footer>&copy; 2025 Jacqueline Edwards. All rights reserved.</footer>
-
-<audio id="hoverSound" preload="auto">
-  <source src="sample-3s.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const buttons = document.querySelectorAll('.game-button');
-const hoverSound = document.getElementById('hoverSound');
-
-function getRandomColor() {
-  const h = Math.floor(Math.random() * 360);
-  const s = 80;
-  const l = 50;
-  return `hsl(${h}, ${s}%, ${l}%)`;
-}
-
-buttons.forEach(btn => {
-  const originalText = btn.textContent;
-
-  btn.addEventListener('mouseenter', () => {
-    const color = getRandomColor();
-    btn.style.setProperty('--hoverColor', color);
-    btn.style.backgroundColor = color;
-    btn.textContent = "Click to Start";
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-  });
-
-  btn.addEventListener('mouseleave', () => {
-    btn.style.backgroundColor = '#222';
-    btn.textContent = originalText;
-  });
-
-  btn.addEventListener('click', () => {
-    const link = btn.getAttribute('data-link');
-    window.location.href = link;
-  });
-});
-</script>
 
 </body>
 </html>
